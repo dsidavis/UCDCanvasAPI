@@ -16,6 +16,29 @@ function(courses, start_date = "2017-01-01", end_date = format(Sys.Date()), acti
   fromJSON(ans)
 }
 
+courses =
+function(
+         url = "https://canvas.ucdavis.edu/api/v1/courses",
+         curl = getCanvasHandle(...), ...)
+{
+  ans = getURLContent(url, curl = con)
+  fromJSON(ans)
+}
+
+
+enrollments =
+function(course, per_page = 100,
+         url = "https://canvas.ucdavis.edu/api/v1/courses/%s/enrollments",
+         curl = getCanvasHandle(...), ...)
+{
+  url = sprintf(url, course)
+  txt = getForm(url, per_page = per_page, curl = con)
+  ans = fromJSON(txt)
+  # Need to page.  
+  ans
+
+}
+
 
 getCanvasHandle =
     #
