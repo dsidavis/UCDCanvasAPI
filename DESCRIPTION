@@ -1,0 +1,10 @@
+Package: UCDCanvasAPI
+Title: Interface to Canvas API
+Version: 0.1-0
+Description: Canvas is a course management system and this provides some
+ R functionality to access the Canvas API methods that allow us query information
+ about courses, students, announcements, grades, quizzes, etc.
+Author: Danielle Hagood, Duncan Temple Lang
+Maintainer: Duncan Temple Lang <duncan@r-project.org>
+License: BSD_3_clause + file LICENSE
+Imports: RCurl, RJSONIO
